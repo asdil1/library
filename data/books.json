@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript: The Good Parts",
+    "author": "Douglas Crockford",
+    "publicationDate": "2008-05-15",
+    "available": true,
+    "borrower": null,
+    "returnDate": null
+  },
+  {
+    "id": 2,
+    "title": "You Don't Know JS",
+    "author": "Kyle Simpson",
+    "publicationDate": "2014-12-27",
+    "available": false,
+    "borrower": "John Doe",
+    "returnDate": "2023-10-01"
+  },
+  {
+    "id": 3,
+    "title": "You",
+    "author": "Kyle Simpson",
+    "publicationDate": "2014-12-27",
+    "available": false,
+    "borrower": "John Smiths",
+    "returnDate": "2023-10-01"
+  }
+]

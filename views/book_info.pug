@@ -1,0 +1,61 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Информация о книге
+        link(rel='stylesheet', href='/stylesheets/book_info.css')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css')
+    body
+        div.container
+            h1 Информация о книге
+            if errorMessage
+                p(style="color:red;") Сообщение: Ваше имя не совпадает с именем читателя.
+            div.book-info
+                p Название: #{book.title}
+                p Автор: #{book.author}
+                p Год: #{book.publicationDate}
+                p Доступно: #{book.available ? 'Да' : 'Нет'}
+                if book.available
+                    p Выдано: Нет
+                else
+                    p Выдано: Да
+                    p Читатель: #{book.borrower}
+                    p Возврат до: #{book.returnDate}
+
+                // Контейнер для всех кнопок
+                div.button-container
+                    // Форма для редактирования книги
+                    form(action=`/library/edit/${book.id}` method='GET')
+                        button(type='submit') Редактировать книгу
+
+                    // Кнопка для возврата на главную страницу
+                    form(action='/library' method='GET')
+                        button(type='submit') На главную страницу
+
+                    if book.available
+                        button(type="button" onclick="showModalWindow('borrowDialog')") Забрать книгу
+                    else
+                        button(type='button' onclick="showModalWindow('returnDialog')") Вернуть книгу
+
+        dialog#borrowDialog
+            p Вы уверены, что хотите забрать книгу "#{book.title}"
+
+            form(action=`/library/borrow/${book.id}` method="POST")
+                label(for="userNameBorrow") Ваше имя:
+                    input(type="text" id="userNameBorrow" name="userName" required)
+                    button( type="submit") Подтвердить
+
+            button(type="button" onclick="hideModalWindow('borrowDialog')") Отмена
+
+        dialog#returnDialog
+            p Вы уверены, что хотите вернуть книгу "#{book.title}"
+
+                form(action=`/library/return/${book.id}` method="POST")
+                    label(for="userNameReturn") Ваше имя:
+                        input(type="text" id="userNameReturn" name="userName" required)
+                        button( type="submit") Подтвердить
+
+                button(type="button" onclick="hideModalWindow('returnDialog')") Отмена
+
+        script(src="/scripts/modalWindow.js")

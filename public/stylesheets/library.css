@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Цвет фона страницы */
+    margin: 0;
+}
+
+/* Стили для заголовка */
+h1 {
+    color: #333; /* Цвет текста заголовка */
+    margin-bottom: 0; /* Отступ снизу */
+    margin-top: 0;
+    padding: 20px 40px; /* Отступ слева */
+    background-color: rgba(255, 230, 170, 0.99);
+    border-radius: 5px;
+}
+
+/* Стили для фильтров */
+.filters {
+    display: flex;
+    align-items: center; /* Вертикальное центрирование */
+    background-color: #f9e6b2; /* Цвет фона фильтров */
+    padding: 10px 20px; /* Отступы */
+}
+
+.filters span {
+    margin-right: 20px; /* Отступ справа от текста Фильтры */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+.container {
+    margin-top: 20px; /* Отступ сверху для контейнера */
+    padding: 0 10px;
+}
+
+.book-item {
+    display: grid; /* Используем Grid Layout */
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Три равные колонки */
+    align-items: center; /* Вертикальное выравнивание по центру */
+    border: 1px solid #ccc; /* Серый цвет границы */
+    padding: 10px; /* Отступ внутри блока книги */
+    margin-bottom: 15px; /* Отступ между книгами */
+    background-color: #f9f9f9; /* Светлый фон */
+    border-radius: 10px; /* Закругленные углы */
+}
+
+/* Стили для кнопок */
+button {
+    padding: 10px 15px; /* Отступы для кнопки */
+    font-size: 16px; /* Размер шрифта */
+    background-color: #4CAF50; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Без границы */
+    border-radius: 5px; /* Закругленные углы */
+    margin-left: 10px; /* Отступ между кнопками */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+/* Эффект при наведении на кнопку */
+button:hover {
+    background-color: darkgreen; /* Более темный цвет при наведении */
+}
+
+.select-button {
+    background-color: #4CAF50; /* Зеленая кнопка */
+    color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.delete-button {
+    background-color: #f44336; /* Красная кнопка */
+    color: white;
+}
+
+.action-buttons i {
+    font-size: 18px;
+}
+
+/* Эффекты при наведении на кнопки */
+.select-button:hover {
+    background-color: darkgreen; /* Темный цвет для "Выбрать" */
+}
+
+.delete-button:hover {
+    background-color: darkred; /* Темный цвет для "Удалить" */
+}
+
+.delete-book-button {
+    background-color:#f44336;
+}
+
+.delete-book-button:hover {
+    background-color: darkred;
+}
+
+.form-paragraph{
+    margin-left: 10px;
+    font-size: 15px;
+}

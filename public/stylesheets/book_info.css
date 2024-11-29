@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Цвет фона страницы */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для формы */
+    max-width: 400px;
+}
+
+/* Стили для заголовка */
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.book-info p {
+    margin: 10px 0;
+}
+
+/* Стили для форм и кнопок */
+form {
+    display: flex;
+    justify-content: center;
+}
+
+/* Контейнер для кнопок, чтобы расположить их в одну строку */
+.button-container {
+    display: flex;
+    margin-top: 15px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+dialog {
+    border: none;
+    border-radius: 10px;
+}
+
+dialog p {
+    margin-bottom: 15px; /* Отступ снизу для текста */
+    font-size: 16px; /* Размер шрифта */
+    text-align: center; /* Центрируем текст */
+}
+
+dialog button {
+    display: block;
+    margin: 10px auto;
+}
+
+#borrowDialog input {
+    width: 100%; /* Полная ширина */
+    padding: 10px; /* Отступы внутри поля */
+    border: 1px solid #ccc; /* Цвет рамки */
+    border-radius: 5px; /* Закругляем углы поля ввода */
+    margin-bottom: 15px; /* Отступ снизу для поля ввода */
+}
+
+#returnDialog input {
+    width: 100%; /* Полная ширина */
+    padding: 10px; /* Отступы внутри поля */
+    border: 1px solid #ccc; /* Цвет рамки */
+    border-radius: 5px; /* Закругляем углы поля ввода */
+    margin-bottom: 15px; /* Отступ снизу для поля ввода */
+}
+
+
+#borrow-dialog-button {
+    display: block; /* Это нужно для того, чтобы margin работал */
+    margin: 0 auto; /* Центрирует по горизонтали */
+}

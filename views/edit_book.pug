@@ -1,0 +1,26 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Редактировать книгу
+        link(rel='stylesheet', href='/stylesheets/add_edit_book.css')
+    body
+        div.form-container
+            h1 Редактировать книгу
+            form(action=`/library/edit/${book.id}` method='POST')
+
+                label(for="title") Название
+                input(type="text" id="title" name="title" value=book.title required)
+
+                label(for="author") Автор
+                input(type="text" id="author" name="author" value=book.author required)
+
+                label(for="publicationDate") Год публикации
+                input(type="date" id="publicationDate" name="publicationDate" value=book.publicationDate required)
+
+                button(type='submit') Сохранить изменения
+
+                // Кнопка для возврата на главную страницу
+            form(action=`/library/info/${book.id}` method='GET')
+                button(type='submit') Отмена

@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Цвет фона страницы */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Высота страницы */
+}
+
+/* Стили для заголовка */
+h1 {
+    color: #333; /* Цвет текста заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Стили для кнопки */
+button {
+    padding: 10px 20px; /* Отступы для кнопки */
+    font-size: 16px; /* Размер шрифта */
+    background-color: #4CAF50; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Без границы */
+    border-radius: 5px; /* Закругленные углы */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+/* Эффект при наведении на кнопку */
+button:hover {
+    background-color: darkgreen; /* Более темный цвет при наведении */
+}

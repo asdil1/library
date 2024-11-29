@@ -1,0 +1,37 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Домашняя Библиотека
+        link(rel='stylesheet', href='/stylesheets/library.css')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css')
+    body
+        h1 Домашняя Библиотека
+        div.filters
+            span Фильтры
+            button(type='button' onclick="fetchBooks('/library/filter?status=available')") В наличии
+            button(type='button' onclick="fetchBooks('/library/filter?status=overdue')") Просрочены
+            button(type='button' onclick="fetchBooks('/library/filter?status=all')") Очистить
+            form(action='/library/add' method='get')
+                button(type='submit') Добавить
+        div.container
+            each book in books
+                div.book-item
+                    p Название: #{book.title}
+                    p Автор: #{book.author}
+                    p Год: #{book.publicationDate}
+                    div.action-buttons
+                        a(href=`/library/info/${book.id}` class='select-button')
+                            i(class="fa-solid fa-pencil")
+
+                        button(type='button' class='delete-button' onclick=`showConfirmation('${book.id}')`)
+                            i(class="fa-solid fa-trash")
+
+                        // форма подтверждения удаления
+                        form(id=`delete-form-${book.id}` style="display:none;" action=`/library/delete/${book.id}` method="POST")
+                            p.form-paragraph Вы уверены, что хотите удалить эту книгу?
+                            button(class="delete-book-button" type="submit") Да
+                            button(type="button" onclick=`hideConfirmation(${book.id})`) Нет
+        script(src="/scripts/deleteBook.js")
+        script(src="/scripts/ajaxFilters.js")
